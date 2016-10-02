@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app='angularPractiseApp'>
+<head>
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width'>
+  <base href='/'></base>
+  <link rel='stylesheet' type='text/css' href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel='stylesheet'type='text/css' href="styles/toDo.css">
+  <link rel='stylesheet' type='text/css' href=https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css>
+  <title>Angular Practise App</title>
+</head>
+<body>
+  <div class="header">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Angular Practise</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+        <li><a href="movies"><i class="fa fa-shield" aria-hidden="true"></i>Movies</a></li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+  <div ng-view="">
+  </div>
+
+
+
+  <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="../bower_components/angular-route/angular-route.js"></script>
+
+  <script type="text/javascript" src="scripts/app.js"></script>
+  <script type="text/javascript" src="scripts/controllers/movie.js"></script>
+  <script type="text/javascript" src="scripts/controllers/singleMovie.js"></script>
+  <script type="text/javascript" src="scripts/controllers/about.js"></script>
+  <script type="text/javascript" src="scripts/controllers/toDo.js"></script>
+
+</body>
+</html>

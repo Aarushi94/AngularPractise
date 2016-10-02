@@ -1,0 +1,45 @@
+<div class='row'>
+  <div class='col-sm-7'>
+    <div ng-repeat="movie in movies"style="float:left">
+      <a ng-href='movie/{{movie.id}}/some-slug'>
+        <h3>{{movie.title}}</h3>
+      </a>
+        <img src='{{movie.poster}}'width="150px"height="200px" style="float:left;margin-left:10px;margin-right:10px"></img>
+        <div>
+          <p>{{movie.description}}</p>
+          <p style='font-style:italic'>{{movie.runtime}}</p>
+          <p>Cast:{{movie.actors}}</p>
+        </div>
+    </div>
+  </div>
+  <div class='col-sm-1'>
+    <span ng-show="closed" class='glyphicon glyphicon-menu-right' ng-click="closed=false"></span>
+    <span ng-hide="closed" class='glyphicon glyphicon-menu-down' ng-click="closed=true"></span>
+  </div>
+  <div class='col-sm-4' ng-hide="closed">
+    <h2>Add a movie</h2>
+    <form>
+      <div class="form-group">
+        <label>Title</label>
+        <input class="form-control"ng-keyup="checkTitle()" ng-model='movie.title' placeholder="Enter title">
+      </div>
+      <div class="form-group">
+        <label>Poster</label>
+        <input type="text" class="form-control" ng-model='movie.poster' placeholder="Enter poster url">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" ng-blur='checkDescription()' ng-model='movie.description' placeholder="Enter description"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Runtime</label>
+        <input type="text" class="form-control" ng-model='movie.runtime' placeholder="Enter runtime">
+      </div>
+      <div class="form-group">
+        <label>Actors</label>
+        <input type="text" class="form-control" ng-model='movie.actors' placeholder="Enter actors">
+      </div>
+      <button type="submit" class="btn btn-primary" ng-click='addMovie()' ng-show='validateForm()'>Add</button>
+    </form>
+  </div>
+</div>

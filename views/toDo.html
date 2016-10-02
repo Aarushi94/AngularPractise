@@ -1,0 +1,19 @@
+<div ng-controller="TodoListController as todoList">
+  <label>Name:</label>
+  <input type="text" ng-model='yourName' placeholder="Enter your name">
+  <h2>Hello {{yourName}}!</h2>
+  <hr>
+  <h2>Total Todos:{{todoList.getTotalTodos()}}</h2>
+  <ul class="unstyled">
+    <li ng-repeat="todo in todoList.todos">
+      <input type="checkbox" ng-model='todo.done'>
+        <span class="done-{{todo.done}}">{{todo.text}}</span>
+    </li>
+  </ul>
+  <form class="form-horizontal">
+    <input type="text" placeholder="Add a new todo" ng-model='todoList.formTodoText' >
+    <button class="btn btn-primary" ng-click='todoList.addTodo()'><i class='icon-plus'></i>Add</button>
+    <br>
+    <button class='btn btn-large btn-default' ng-click='todoList.clearCompleted()'>Clear Complete</button>
+  </form>
+</div>

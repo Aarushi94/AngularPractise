@@ -1,0 +1,23 @@
+angular.module('angularPractiseApp',['ngRoute']).config(function($routeProvider,$locationProvider){
+  $locationProvider.html5Mode(true);
+  $routeProvider
+    .when('/',{
+      templateUrl:'views/toDo.html',
+      controller:'TodoListController'
+    })
+    .when('/about',{
+      templateUrl:'views/about.html',
+      controller:'aboutCtrl'
+    })
+    .when('/movies',{
+      templateUrl:'views/movie.html',
+      controller:'movieCtrl'
+    })
+    .when('/movie/:id/:slug',{
+      templateUrl:'views/singleMovie.html',
+      controller:'singleMovieCtrl'
+    })
+    .otherwise({
+      redirectTo:'/'
+    });
+});
